@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Q&AServiceRestAPI"
+name = "QnAServiceRestAPI"
 version = "0.1.0"
 description = ""
 authors = ["Булат Хазиев <khazievbulatphanzilovich@gmail.com>"]
@@ -7,6 +7,19 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.7"
+django = "^3.1.7"
+psycopg2-binary = "^2.8.6"
+psycopg2 = "^2.8.6"
+djangorestframework = "^3.12.2"
+drf-yasg = "^1.20.0"
+pytest = "^6.2.2"
+pytest-django = "^4.1.0"
+factory-boy = "^3.2.0"
+coverage = "^5.5"
+celery = "<5.0.0"
+redis = "^3.5.3"
+django-celery-beat = "^2.2.0"
+gunicorn = "^20.0.4"
 
 [tool.poetry.dev-dependencies]
 
