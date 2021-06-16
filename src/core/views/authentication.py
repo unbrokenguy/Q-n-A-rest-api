@@ -12,8 +12,14 @@ from rest_framework.viewsets import GenericViewSet
 from django.utils.translation import gettext_lazy as _
 
 from core.models import User, Token, TokenTypeEnum
-from core.serializers import UserWithTokenSerializer, UserSignInSerializer, UserSignUpSerializer, \
-    ConfirmEmailSerializer, ForgotPasswordSerializer, ResetPasswordSerializer
+from core.serializers import (
+    UserWithTokenSerializer,
+    UserSignInSerializer,
+    UserSignUpSerializer,
+    ConfirmEmailSerializer,
+    ForgotPasswordSerializer,
+    ResetPasswordSerializer,
+)
 from core.services import send_email_verification, send_reset_password_email
 
 
@@ -124,7 +130,7 @@ class AuthenticationViewSet(GenericViewSet):
 
         try:
             token = Token.objects.get(
-                value=request.data.get("token") or request.GET.get('token'),
+                value=request.data.get("token") or request.GET.get("token"),
                 expiration_date__gt=timezone.now(),
                 token_type=TokenTypeEnum.EMAIL_VERIFICATION,
             )
@@ -199,4 +205,3 @@ class AuthenticationViewSet(GenericViewSet):
         user.save()
 
         return Response(self.serializer_class(user, context={"request": request}).data)
-

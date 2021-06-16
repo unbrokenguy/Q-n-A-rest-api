@@ -9,6 +9,7 @@ class UserSignInSerializer(serializers.ModelSerializer):
     Sign in data serializer.
     If user does not exist raises Validation Error.
     """
+
     class Meta:
         model = User
         fields = ("email", "password")

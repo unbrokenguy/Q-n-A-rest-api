@@ -1,6 +1,11 @@
-__all__ = ["UserSignUpSerializer", "UserSignInSerializer",
-           "UserWithTokenSerializer", "ConfirmEmailSerializer",
-           "ForgotPasswordSerializer", "ResetPasswordSerializer"]
+__all__ = [
+    "UserSignUpSerializer",
+    "UserSignInSerializer",
+    "UserWithTokenSerializer",
+    "ConfirmEmailSerializer",
+    "ForgotPasswordSerializer",
+    "ResetPasswordSerializer",
+]
 
 from core.serializers.authentication.confirm_email import ConfirmEmailSerializer
 from core.serializers.authentication.forgot import ForgotPasswordSerializer

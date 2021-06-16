@@ -18,12 +18,14 @@ def send_email_verification(user, token: Token):
     button_text = _("Confirm.")
     html_message = render_to_string(
         "email/base.html",
-        context={"title": title,
-                 "text": text,
-                 "organization": organization,
-                 "button_link": button_link,
-                 "button_text": button_text,
-                 "token": token.value},
+        context={
+            "title": title,
+            "text": text,
+            "organization": organization,
+            "button_link": button_link,
+            "button_text": button_text,
+            "token": token.value,
+        },
     )
     send_template_email(_("Email Verification"), html_message, [user.email])
 
@@ -37,12 +39,13 @@ def send_reset_password_email(user, token: Token):
     button_text = _("Reset.")
     html_message = render_to_string(
         "email/base.html",
-        context={"title": title,
-                 "text": text,
-                 "organization": organization,
-                 "button_link": button_link,
-                 "button_text": button_text,
-                 "token": token.value},
+        context={
+            "title": title,
+            "text": text,
+            "organization": organization,
+            "button_link": button_link,
+            "button_text": button_text,
+            "token": token.value,
+        },
     )
     send_template_email(_("Reset password"), html_message, [user.email])
-

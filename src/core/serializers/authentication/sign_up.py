@@ -11,6 +11,7 @@ class UserSignUpSerializer(serializers.ModelSerializer):
     If user already exist raises Validation Error.
     Also check password if it strong enough.
     """
+
     class Meta:
         model = User
         fields = ("first_name", "last_name", "email", "password")
