@@ -1,6 +1,7 @@
 from rest_framework import serializers
-from core.serializers.authentication.user import UserSerializer
 from rest_framework.authtoken.models import Token
+
+from core.serializers.authentication.user import UserSerializer
 
 
 class UserWithTokenSerializer(serializers.ModelSerializer):

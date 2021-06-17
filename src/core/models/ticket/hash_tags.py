@@ -10,5 +10,6 @@ class HashTag(models.Model):
         name: String - Name of HashTag category.
         description: String - Description of HashTag.
     """
+
     name = models.CharField(max_length=25, unique=True)
     description = models.CharField(max_length=255, blank=True)

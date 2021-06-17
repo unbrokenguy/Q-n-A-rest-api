@@ -11,6 +11,7 @@ class Ticket(models.Model):
         question: String with question, max length is 4000 because of telegram restrictions.
         is_archived: Boolean, True if ticket marked as solved or closed.
     """
+
     creator = models.ForeignKey("User", on_delete=models.CASCADE)
     hash_tag = models.ForeignKey("HashTag", on_delete=models.CASCADE, blank=False)
     question = models.CharField(max_length=4000, blank=False)
