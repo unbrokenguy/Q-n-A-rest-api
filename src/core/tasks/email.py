@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
-from django.conf import settings
 import django.core.mail as dcm
+from django.conf import settings
 
 from rest_api.celery import app
 

@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from core.models import User
+
 
 class ResetPasswordSerializer(serializers.ModelSerializer):
     """
@@ -7,6 +9,7 @@ class ResetPasswordSerializer(serializers.ModelSerializer):
     """
 
     class Meta:
+        model = User
         fields = ["password"]
         extra_kwargs = {
             "password": {"required": True},

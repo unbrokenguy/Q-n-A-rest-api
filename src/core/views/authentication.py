@@ -1,24 +1,25 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.utils import timezone
-from drf_yasg import openapi
-from drf_yasg.utils import swagger_auto_schema
+from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
-from django.utils.translation import gettext_lazy as _
 
-from core.models import User, Token, TokenTypeEnum
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
+
+from core.models import Token, TokenTypeEnum, User
 from core.serializers import (
-    UserWithTokenSerializer,
-    UserSignInSerializer,
-    UserSignUpSerializer,
     ConfirmEmailSerializer,
     ForgotPasswordSerializer,
     ResetPasswordSerializer,
+    UserSignInSerializer,
+    UserSignUpSerializer,
+    UserWithTokenSerializer,
 )
 from core.services import send_email_verification, send_reset_password_email
 
