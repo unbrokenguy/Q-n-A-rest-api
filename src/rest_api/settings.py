@@ -27,7 +27,6 @@ DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     "celery",
     "django_celery_beat",
     "rest_framework",
@@ -60,6 +60,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -157,3 +158,6 @@ path = "default"
 CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://127.0.0.1:6379")
 CELERY_BEAT_SCHEDULER = "django"
 CELERY_TIMEZONE = "Europe/Moscow"
+
+
+CORS_ORIGIN_ALLOW_ALL = True
